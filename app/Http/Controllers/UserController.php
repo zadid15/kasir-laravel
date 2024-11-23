@@ -103,13 +103,13 @@ class UserController extends Controller
             $request->session()->regenerate();
             return redirect()->intended('/dashboard');
         } else{
-            return back()->with('error', 'Login Gagal Username / Password Salah');
+            return back()->with('error', 'Login failed. Incorrect username or password.');
         }
     }
 
     public function logout()
     {
         Auth::logout();
-        return redirect()->route('login')->with('success', 'Logout Berhasil');
+        return redirect()->route('login')->with('success', 'Logout Successful');
     }
 }
